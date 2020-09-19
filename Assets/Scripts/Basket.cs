@@ -44,10 +44,15 @@ public class Basket : MonoBehaviour
 
 				//parse the text of the scoreGT into an int
 				int score = int.Parse(scoreGT.text);
-				//add points for catching the appl 
+				//add points for catching the apple 
 				score += 100;
-				//convert the score back to a stri 
+				//convert the score back to a string and display it
 				scoreGT.text = score.ToString();
+
+				// Track the high score
+				if (score > HighScore.score){ 
+					HighScore.score = score;
+   				}
 
            }
 
